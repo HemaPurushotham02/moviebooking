@@ -1,25 +1,14 @@
-var express = require('express')
-  ,http = require('http')
-  ,fs = require('fs')
-  ,path = require('path');
+const express  = require('express');
+const app = express();  
 
-var app = express();
-
-
-app.get('/movie',function(req,res){
+app.get("/movies",(req, res, next)=>{
     res.send("All Movies Data in JSON format from Mongo DB")
 })
-
-app.get('/genres',function(req,res){
-    res.send("All Genres Data in JSON format from Mongo DB")
+app.get("/genres",(req, res, next)=>{
+    res.send("All genres Data in JSON format from Mongo DB")
+})
+app.get("/artists",(req, res, next)=>{
+    res.send("All artists Data in JSON format from Mongo DB")
 })
 
-app.get('/artists',function(req,res){
-    res.send("All Artists Data in JSON format from Mongo DB")
-})
-
-
-
-app.listen(9000, function () {
-    console.log("express has started on port 3000");
-   });
+// app.listen(9000);
